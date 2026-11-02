@@ -1,0 +1,1727 @@
+/* ==========================================================================
+   PINK LADY HERBAL NAPKIN — LUXURY DESIGN SYSTEM
+   Palette: Coral (#E76F70) + Deep Plum (#673C67) + Soft Peach (#F8D9CD)
+            Cream (#FFF8F0) + Dark Plum (#332733) + White (#FFFFFF)
+   Strict Rules: Zero sparkles, Zero blinking, Zero normal dots. Smooth 60fps.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Brand Color Palette */
+  --coral: #E76F70;
+  --coral-hover: #D85A5B;
+  --coral-light: rgba(231, 111, 112, 0.12);
+  --coral-glow: rgba(231, 111, 112, 0.25);
+  
+  --deep-plum: #673C67;
+  --deep-plum-hover: #532E53;
+  --deep-plum-light: rgba(103, 60, 103, 0.08);
+  
+  --soft-peach: #F8D9CD;
+  --soft-peach-warm: #F3C9BA;
+  
+  --cream: #FFF8F0;
+  --cream-card: #FFFFFF;
+  --dark-plum: #332733;
+  --dark-plum-muted: #645564;
+  --white: #FFFFFF;
+  --soft-border: #E9DCD7;
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Transitions & Easing */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s var(--ease-smooth);
+  --transition-normal: 0.35s var(--ease-smooth);
+  --transition-slow: 0.6s var(--ease-smooth);
+  
+  /* Radii & Shadows (Organic, Curated Curves) */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --radius-organic: 32px 14px 32px 14px;
+  --radius-organic-alt: 14px 32px 14px 32px;
+  
+  --shadow-subtle: 0 4px 20px rgba(103, 60, 103, 0.04);
+  --shadow-card: 0 10px 30px rgba(103, 60, 103, 0.06);
+  --shadow-elevated: 0 16px 40px rgba(103, 60, 103, 0.09);
+  --shadow-coral: 0 8px 24px rgba(231, 111, 112, 0.24);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--dark-plum);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Clean text selection */
+::selection {
+  background-color: var(--soft-peach);
+  color: var(--deep-plum);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, .serif-font {
+  font-family: var(--font-heading);
+  color: var(--deep-plum);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.text-coral {
+  color: var(--coral);
+}
+
+.text-plum {
+  color: var(--deep-plum);
+}
+
+.text-muted {
+  color: var(--dark-plum-muted);
+}
+
+/* Section Header Typography */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background-color: var(--soft-peach);
+  color: var(--deep-plum);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+  border: 1px solid rgba(231, 111, 112, 0.2);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--dark-plum-muted);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   BUTTONS & PILL CONTROLS (Zero sparkles, sleek continuous contours)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.btn-coral {
+  background-color: var(--coral);
+  color: var(--white);
+  box-shadow: var(--shadow-coral);
+}
+
+.btn-coral:hover {
+  background-color: var(--coral-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(231, 111, 112, 0.32);
+}
+
+.btn-outline-plum {
+  background-color: transparent;
+  color: var(--deep-plum);
+  border-color: var(--deep-plum);
+}
+
+.btn-outline-plum:hover {
+  background-color: var(--deep-plum);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(103, 60, 103, 0.16);
+}
+
+.btn-pill-sm {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   NAVIGATION (Floating Glassmorphism)
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: all var(--transition-normal);
+}
+
+.site-header.scrolled {
+  padding: 10px 0;
+  background: rgba(255, 248, 240, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--soft-border);
+  box-shadow: var(--shadow-subtle);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo-link:hover {
+  transform: scale(1.02);
+}
+
+.brand-logo-svg {
+  height: 48px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--dark-plum);
+  position: relative;
+  transition: color var(--transition-fast);
+  padding: 4px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--coral);
+  border-radius: var(--radius-pill);
+  transition: width var(--transition-normal);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--deep-plum);
+  font-weight: 600;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cart-toggle-btn {
+  background: var(--white);
+  border: 1px solid var(--soft-border);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--deep-plum);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cart-toggle-btn:hover {
+  background: var(--soft-peach);
+  border-color: var(--soft-peach-warm);
+  transform: translateY(-1px);
+}
+
+.cart-count-badge {
+  background: var(--coral);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--deep-plum);
+}
+
+/* ==========================================================================
+   HERO SECTION (Rich botanical backdrop, serene luxury, asymmetric balance)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 130px;
+  padding-bottom: 80px;
+  display: flex;
+  align-items: center;
+  background-color: var(--cream);
+  overflow: hidden;
+}
+
+/* Hero Background Layering */
+.hero-bg-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+  background-image: url('assets/images/hero_bg.jpg');
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.94;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 20%, black 65%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 20%, black 65%);
+  z-index: 1;
+}
+
+.hero-ambient-glow {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(248, 217, 205, 0.55) 0%, rgba(255, 248, 240, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--soft-border);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--deep-plum);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+  line-height: 1.18;
+  color: var(--deep-plum);
+  margin-bottom: 22px;
+  letter-spacing: -1px;
+}
+
+.hero-title span {
+  color: var(--coral);
+  font-style: italic;
+}
+
+.hero-description {
+  font-size: 1.12rem;
+  color: var(--dark-plum-muted);
+  line-height: 1.75;
+  margin-bottom: 34px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 44px;
+}
+
+.hero-trust-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid var(--soft-border);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--deep-plum);
+}
+
+.trust-item svg {
+  color: var(--coral);
+  flex-shrink: 0;
+}
+
+/* Hero Right Floating Product Card */
+.hero-visual-pod {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-product-glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 36px 16px 36px 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-elevated);
+  max-width: 420px;
+  width: 100%;
+  transition: transform var(--transition-slow);
+}
+
+.hero-product-glass-card:hover {
+  transform: translateY(-4px);
+}
+
+.hero-card-img-wrap {
+  border-radius: 24px 10px 24px 10px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background-color: var(--cream);
+}
+
+.hero-card-img-wrap img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.hero-product-glass-card:hover .hero-card-img-wrap img {
+  transform: scale(1.03);
+}
+
+.hero-card-details h3 {
+  font-size: 1.25rem;
+  color: var(--deep-plum);
+  margin-bottom: 6px;
+}
+
+.hero-card-details p {
+  font-size: 0.9rem;
+  color: var(--dark-plum-muted);
+  margin-bottom: 14px;
+}
+
+.hero-card-pill-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.micro-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--soft-peach);
+  color: var(--deep-plum);
+}
+
+/* Floating Metric Bubble */
+.floating-stat-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: var(--white);
+  border: 1px solid var(--soft-border);
+  padding: 14px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-elevated);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+}
+
+.stat-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--coral-light);
+  color: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-text strong {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--deep-plum);
+  line-height: 1.2;
+}
+
+.stat-text span {
+  font-size: 0.78rem;
+  color: var(--dark-plum-muted);
+}
+
+/* ==========================================================================
+   ORGANIC SECTION DIVIDERS (Continuous smooth curves, zero dots)
+   ========================================================================== */
+.organic-wave-divider {
+  width: 100%;
+  line-height: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.organic-wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 54px;
+}
+
+/* ==========================================================================
+   WHY HERBAL PILLARS (Asymmetric organic grid)
+   ========================================================================== */
+.why-herbal-section {
+  padding: 90px 0;
+  background-color: var(--white);
+  position: relative;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.pillar-card {
+  background-color: var(--cream);
+  border: 1px solid var(--soft-border);
+  border-radius: var(--radius-organic);
+  padding: 32px 24px;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.pillar-card:nth-child(even) {
+  border-radius: var(--radius-organic-alt);
+}
+
+.pillar-card:hover {
+  background-color: var(--white);
+  border-color: var(--soft-peach-warm);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.pillar-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-pill);
+  background-color: var(--soft-peach);
+  color: var(--deep-plum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: background-color var(--transition-fast);
+}
+
+.pillar-card:hover .pillar-icon-box {
+  background-color: var(--coral);
+  color: var(--white);
+}
+
+.pillar-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--deep-plum);
+}
+
+.pillar-card p {
+  font-size: 0.92rem;
+  color: var(--dark-plum-muted);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   CUSTOM NAPKIN STUDIO (THE ATELIER)
+   Interactive pad configurator, real-time visual pad morphing
+   ========================================================================== */
+.custom-studio-section {
+  padding: 100px 0;
+  background-color: var(--cream);
+  position: relative;
+}
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+/* Left Column: Visual Morphing Pad Stage */
+.studio-visual-stage {
+  position: sticky;
+  top: 100px;
+  background: var(--white);
+  border: 1px solid var(--soft-border);
+  border-radius: 36px 16px 36px 16px;
+  padding: 40px 30px;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.pad-viewport {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* Dynamic Pad SVG Graphic Container */
+.pad-render-container {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  transition: all var(--transition-slow);
+}
+
+/* Visual pad dimensions feedback */
+.pad-metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--soft-peach);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--deep-plum);
+  margin-top: 24px;
+}
+
+.pad-infusion-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--dark-plum-muted);
+}
+
+.infusion-chip-preview {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background-color: #6da278; /* changes dynamically */
+  transition: background-color var(--transition-normal);
+}
+
+/* Right Column: Customizer Controls Panel */
+.studio-controls-panel {
+  background: var(--white);
+  border: 1px solid var(--soft-border);
+  border-radius: 16px 36px 16px 36px;
+  padding: 44px;
+  box-shadow: var(--shadow-card);
+}
+
+.studio-step-block {
+  margin-bottom: 36px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--soft-border);
+}
+
+.studio-step-block:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.step-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.step-number-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.step-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: var(--deep-plum);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.step-title {
+  font-size: 1.15rem;
+  color: var(--deep-plum);
+  font-weight: 700;
+}
+
+.step-helper {
+  font-size: 0.85rem;
+  color: var(--coral);
+  font-weight: 600;
+}
+
+/* Selectable Option Cards (Continuous sleek pills) */
+.options-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.options-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.option-card-radio {
+  border: 1.5px solid var(--soft-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  cursor: pointer;
+  background-color: var(--cream);
+  transition: all var(--transition-fast);
+  text-align: left;
+  position: relative;
+}
+
+.option-card-radio:hover {
+  border-color: var(--soft-peach-warm);
+  background-color: var(--white);
+  transform: translateY(-1px);
+}
+
+.option-card-radio.selected {
+  border-color: var(--coral);
+  background-color: rgba(231, 111, 112, 0.05);
+  box-shadow: 0 4px 16px rgba(231, 111, 112, 0.12);
+}
+
+.option-card-radio strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--deep-plum);
+  margin-bottom: 4px;
+}
+
+.option-card-radio span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--dark-plum-muted);
+  line-height: 1.4;
+}
+
+.option-card-radio .badge-recom {
+  position: absolute;
+  top: -9px;
+  right: 12px;
+  background: var(--coral);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Summary & Add to Pack Block */
+.studio-checkout-box {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-top: 32px;
+  border: 1px solid var(--soft-border);
+}
+
+.checkout-calc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.checkout-calc-row .price-label {
+  font-size: 0.95rem;
+  color: var(--dark-plum-muted);
+}
+
+.checkout-calc-row .price-val {
+  font-size: 1.85rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--deep-plum);
+}
+
+.price-sub {
+  font-size: 0.8rem;
+  color: var(--coral);
+  font-weight: 600;
+  display: block;
+  text-align: right;
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ==========================================================================
+   7-LAYER PAD ANATOMY (Interactive depth view)
+   ========================================================================== */
+.anatomy-section {
+  padding: 100px 0;
+  background-color: var(--white);
+}
+
+.anatomy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.anatomy-visual-column {
+  position: relative;
+}
+
+.anatomy-img-frame {
+  border-radius: 40px 16px 40px 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--soft-border);
+  position: relative;
+}
+
+.anatomy-img-frame img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.anatomy-layers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.layer-item-tab {
+  background: var(--cream);
+  border: 1.5px solid var(--soft-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.layer-item-tab:hover {
+  background: var(--white);
+  border-color: var(--soft-peach-warm);
+}
+
+.layer-item-tab.active {
+  background: var(--white);
+  border-color: var(--coral);
+  box-shadow: var(--shadow-subtle);
+  transform: translateX(6px);
+}
+
+.layer-num {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background: var(--soft-peach);
+  color: var(--deep-plum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.layer-item-tab.active .layer-num {
+  background: var(--coral);
+  color: var(--white);
+}
+
+.layer-info h4 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  color: var(--deep-plum);
+}
+
+.layer-info p {
+  font-size: 0.88rem;
+  color: var(--dark-plum-muted);
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   BOTANICAL INGREDIENT GARDEN
+   ========================================================================== */
+.ingredients-section {
+  padding: 100px 0;
+  background-color: var(--cream);
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.ingredient-card {
+  background: var(--white);
+  border: 1px solid var(--soft-border);
+  border-radius: 28px 12px 28px 12px;
+  padding: 32px 24px;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--soft-peach-warm);
+  box-shadow: var(--shadow-card);
+}
+
+.ingredient-herb-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--coral);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.ingredient-card h3 {
+  font-size: 1.35rem;
+  color: var(--deep-plum);
+  margin-bottom: 12px;
+}
+
+.ingredient-latin {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--dark-plum-muted);
+  margin-bottom: 14px;
+}
+
+.ingredient-card p {
+  font-size: 0.9rem;
+  color: var(--dark-plum-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.ingredient-benefit-pill {
+  margin-top: auto;
+  background: var(--soft-peach);
+  color: var(--deep-plum);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  align-self: flex-start;
+}
+
+/* ==========================================================================
+   CURATED READY PACKS
+   ========================================================================== */
+.curated-section {
+  padding: 100px 0;
+  background-color: var(--white);
+}
+
+.packs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.pack-card {
+  background: var(--cream);
+  border: 1px solid var(--soft-border);
+  border-radius: 32px 14px 32px 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.pack-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--soft-peach-warm);
+  box-shadow: var(--shadow-elevated);
+}
+
+.pack-img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: var(--soft-peach);
+}
+
+.pack-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.pack-card:hover .pack-img-wrap img {
+  transform: scale(1.04);
+}
+
+.pack-badge-popular {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--coral);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pack-content {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.pack-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--deep-plum);
+}
+
+.pack-content p {
+  font-size: 0.9rem;
+  color: var(--dark-plum-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.pack-breakdown {
+  list-style: none;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pack-breakdown li {
+  font-size: 0.85rem;
+  color: var(--deep-plum);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.pack-breakdown li svg {
+  color: var(--coral);
+}
+
+.pack-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid var(--soft-border);
+}
+
+.pack-price {
+  font-size: 1.45rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--deep-plum);
+}
+
+/* ==========================================================================
+   CYCLE & FLOW CALCULATOR QUIZ
+   ========================================================================== */
+.quiz-section {
+  padding: 90px 0;
+  background-color: var(--cream);
+}
+
+.quiz-card {
+  background: var(--white);
+  border: 1px solid var(--soft-border);
+  border-radius: 36px 16px 36px 16px;
+  padding: 48px;
+  box-shadow: var(--shadow-card);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.quiz-options-group {
+  margin-bottom: 28px;
+}
+
+.quiz-question-title {
+  font-size: 1.15rem;
+  color: var(--deep-plum);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.quiz-pills-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.quiz-pill-btn {
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--soft-border);
+  background: var(--cream);
+  color: var(--deep-plum);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.quiz-pill-btn:hover {
+  border-color: var(--coral);
+  background: var(--white);
+}
+
+.quiz-pill-btn.active {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: var(--white);
+  box-shadow: var(--shadow-coral);
+}
+
+.quiz-result-box {
+  background: var(--soft-peach);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.result-text h4 {
+  font-size: 1.1rem;
+  color: var(--deep-plum);
+  margin-bottom: 4px;
+}
+
+.result-text p {
+  font-size: 0.9rem;
+  color: var(--dark-plum-muted);
+}
+
+/* ==========================================================================
+   TESTIMONIALS & CLINICAL TRUST
+   ========================================================================== */
+.reviews-section {
+  padding: 100px 0;
+  background-color: var(--white);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.review-card {
+  background: var(--cream);
+  border: 1px solid var(--soft-border);
+  border-radius: 28px 12px 28px 12px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--soft-peach-warm);
+}
+
+.review-stars {
+  color: var(--coral);
+  margin-bottom: 14px;
+  display: flex;
+  gap: 3px;
+}
+
+.review-quote {
+  font-size: 0.96rem;
+  color: var(--dark-plum);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.reviewer-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background: var(--soft-peach);
+  color: var(--deep-plum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.reviewer-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--deep-plum);
+}
+
+.reviewer-badge {
+  font-size: 0.75rem;
+  color: var(--coral);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   FAQ ACCORDION
+   ========================================================================== */
+.faq-section {
+  padding: 100px 0;
+  background-color: var(--cream);
+}
+
+.faq-container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--soft-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 22px 24px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--deep-plum);
+}
+
+.faq-chevron {
+  transition: transform var(--transition-normal);
+  color: var(--coral);
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+  padding: 0 24px;
+}
+
+.faq-item.open .faq-answer {
+  padding-bottom: 22px;
+}
+
+.faq-answer p {
+  font-size: 0.95rem;
+  color: var(--dark-plum-muted);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   FOOTER (Deep Plum #332733 Luxury Aesthetic)
+   ========================================================================== */
+.site-footer {
+  background-color: var(--dark-plum);
+  color: var(--white);
+  padding: 80px 0 32px 0;
+  position: relative;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 0.9fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+
+.footer-brand p {
+  color: #c9bbc9;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  max-width: 320px;
+}
+
+.footer-cert-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-cert-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--soft-peach);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.footer-col h4 {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: #c9bbc9;
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--soft-peach);
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.footer-newsletter-input {
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-pill);
+  padding: 12px 20px;
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.footer-newsletter-input::placeholder {
+  color: #a494a4;
+}
+
+.footer-newsletter-input:focus {
+  outline: none;
+  border-color: var(--coral);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: #a494a4;
+}
+
+/* ==========================================================================
+   SLIDE-OVER CART DRAWER & TOAST NOTIFICATION
+   ========================================================================== */
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(51, 39, 51, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.cart-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 440px;
+  background: var(--cream);
+  z-index: 1060;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+}
+
+.cart-drawer-overlay.active .cart-drawer {
+  transform: translateX(0);
+}
+
+.cart-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--soft-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+}
+
+.cart-header h3 {
+  font-size: 1.25rem;
+  color: var(--deep-plum);
+}
+
+.cart-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--dark-plum-muted);
+  cursor: pointer;
+  padding: 6px;
+  transition: color var(--transition-fast);
+}
+
+.cart-close-btn:hover {
+  color: var(--coral);
+}
+
+.cart-body {
+  padding: 24px;
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-empty-message {
+  text-align: center;
+  margin: auto;
+  color: var(--dark-plum-muted);
+}
+
+.cart-item-card {
+  background: var(--white);
+  border: 1px solid var(--soft-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.cart-item-info h4 {
+  font-size: 0.95rem;
+  color: var(--deep-plum);
+  margin-bottom: 4px;
+}
+
+.cart-item-info p {
+  font-size: 0.8rem;
+  color: var(--dark-plum-muted);
+}
+
+.cart-item-price {
+  font-weight: 700;
+  color: var(--deep-plum);
+  margin-left: auto;
+  font-size: 1rem;
+}
+
+.cart-remove-item {
+  background: transparent;
+  border: none;
+  color: #ba9dba;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.cart-remove-item:hover {
+  color: var(--coral);
+}
+
+.cart-footer {
+  padding: 24px;
+  background: var(--white);
+  border-top: 1px solid var(--soft-border);
+}
+
+.cart-subtotal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--deep-plum);
+}
+
+/* Toast Message */
+.toast-notice {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--deep-plum);
+  color: var(--white);
+  padding: 14px 24px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-elevated);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all var(--transition-normal);
+  pointer-events: none;
+}
+
+.toast-notice.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Flawless on Mobile, Tablet & Desktop)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-bg-layer {
+    width: 100%;
+    opacity: 0.45;
+  }
+  .studio-grid {
+    grid-template-columns: 1fr;
+  }
+  .studio-visual-stage {
+    position: static;
+  }
+  .pillars-grid, .ingredients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .packs-grid, .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .anatomy-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links, .nav-actions .btn {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .pillars-grid, .ingredients-grid, .packs-grid, .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .options-grid-2x2, .options-grid-3col {
+    grid-template-columns: 1fr;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+  .quiz-result-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-section {
+    padding-top: 110px;
+  }
+}

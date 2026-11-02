@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" fill="none">
+  <!-- Botanical Silhouette Emblem -->
+  <g transform="translate(10, 8)">
+    <!-- Soft circular aura -->
+    <circle cx="32" cy="32" r="30" fill="#E76F70" fill-opacity="0.2"/>
+    
+    <!-- Organic Leaf Accent (Coral) -->
+    <path d="M26 44 C20 38, 20 26, 32 18 C38 24, 40 34, 30 42 C28.5 43.2, 27.2 43.8, 26 44 Z" fill="#E76F70"/>
+    <path d="M26 44 C28 36, 31 28, 32 18" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Feminine Silhouette in Crisp White -->
+    <path d="M34 16 C36 14, 39 14.5, 41 16.5 C43 18.5, 43.5 21, 42.5 23 C41.5 25, 41 27, 43 29 C45 31, 46 34, 43 37 C40.5 39.5, 37 42, 34 44 C33 41, 33 37, 34.5 33 C35.5 31, 35.8 28.5, 34.5 26.5 C33 24, 33 20, 34 16 Z" fill="#FFFFFF"/>
+    
+    <!-- Flowing Hair / Herbal Flourish -->
+    <path d="M38 18 C44 18, 48 24, 46 32 C45 36, 42 41, 36 45" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Gentle Bloom Crown Petal -->
+    <path d="M38 13 C39 10, 42 10, 43 13 C42 14, 40 14, 38 13 Z" fill="#E76F70"/>
+    <path d="M34 12 C35 9.5, 37.5 9.5, 38 12 C37 13, 35.5 13, 34 12 Z" fill="#F8D9CD"/>
+  </g>
+
+  <!-- Wordmark Text -->
+  <g transform="translate(86, 22)">
+    <!-- Brand Title -->
+    <text x="0" y="24" font-family="'Playfair Display', Georgia, serif" font-size="25" font-weight="700" fill="#FFFFFF" letter-spacing="1.2">PINK LADY</text>
+    
+    <!-- Subtitle / Category -->
+    <text x="1" y="42" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#F8D9CD" letter-spacing="3.2">HERBAL SANITARY CARE</text>
+  </g>
+</svg>
