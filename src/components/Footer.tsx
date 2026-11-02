@@ -40,15 +40,15 @@ export function Footer() {
 
           </div>
 
-          {/* Chapters Col */}
+          {/* Quick Navigation Col */}
           <div>
-            <h4 style={{ color: 'var(--white)', fontSize: '1rem', marginBottom: '18px', fontWeight: 600 }}>The Story</h4>
+            <h4 style={{ color: 'var(--white)', fontSize: '1rem', marginBottom: '18px', fontWeight: 600 }}>Explore</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem' }}>
-              <Link href="#chapter-1" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Chapter 01: The Awakening</Link>
-              <Link href="#chapter-2" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Chapter 02: Honoring Her Flow</Link>
-              <Link href="#chapter-3" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Chapter 03: Earth’s Wisdom</Link>
-              <Link href="#chapter-4" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Chapter 04: Seven Veils</Link>
-              <Link href="#chapter-5" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Chapter 05: The Care Ritual</Link>
+              <Link href="#chapter-1" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Our Story</Link>
+              <Link href="#chapter-2" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Custom Box</Link>
+              <Link href="#chapter-3" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Ingredients</Link>
+              <Link href="#chapter-4" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Technology & Anatomy</Link>
+              <Link href="#chapter-5" style={{ color: '#c9bbc9', transition: 'color 0.2s' }}>Bundles & Kits</Link>
             </div>
           </div>
 

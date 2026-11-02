@@ -18,9 +18,6 @@ export function HeroSection() {
           position: 'relative',
           width: '100%',
           backgroundColor: '#FAF3E8',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
           paddingTop: '65px', // comfortable offset so navbar sits gracefully over top air
         }}
       >
@@ -28,9 +25,7 @@ export function HeroSection() {
           style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '1920px',
-            aspectRatio: '1376 / 768',
-            maxHeight: 'calc(100vh - 65px)',
+            aspectRatio: '21 / 9',
           }}
         >
           <Image
@@ -39,7 +34,7 @@ export function HeroSection() {
             fill
             priority
             style={{
-              objectFit: 'contain',
+              objectFit: 'cover',
               objectPosition: 'center',
             }}
             sizes="100vw"
@@ -51,10 +46,10 @@ export function HeroSection() {
             aria-label="Customize Your Flow Box"
             style={{
               position: 'absolute',
-              top: '66.5%',
-              left: '61.2%',
-              width: '25.8%',
-              height: '8.2%',
+              top: '67.1%',
+              left: '61.7%',
+              width: '25.2%',
+              height: '7.3%',
               borderRadius: '9999px',
               cursor: 'pointer',
               zIndex: 10,

@@ -74,22 +74,22 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* Quiet Navigation Links */}
+        {/* Clean, Professional Navigation Links */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '32px' }} className="nav-desktop">
           <Link href="#chapter-1" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--dark-plum)', transition: 'color 0.2s' }}>
-            Awakening
+            Our Story
           </Link>
           <Link href="#chapter-2" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--dark-plum)', transition: 'color 0.2s' }}>
-            Custom Atelier
+            Custom Box
           </Link>
           <Link href="#chapter-3" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--dark-plum)', transition: 'color 0.2s' }}>
-            Herbal Wisdom
+            Ingredients
           </Link>
           <Link href="#chapter-4" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--dark-plum)', transition: 'color 0.2s' }}>
-            7 Veils
+            Technology
           </Link>
           <Link href="#chapter-5" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--dark-plum)', transition: 'color 0.2s' }}>
-            Care Kits
+            Bundles
           </Link>
         </nav>
 
